@@ -316,6 +316,7 @@ Query OK, 0 rows affected (0.27 sec)
 
 Assignment Question
 ==================
+Create a table named company_staff.
 Add the following columns to the table:
  emp_id, age, experience, gender, emp_name, address, salary, department, skills, joining_date.
 Use INT datatype for emp_id.
