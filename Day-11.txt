@@ -1,0 +1,536 @@
+--Summary of Numeric Functions:
+ABS(): Absolute value of a number.
+CEIL(): Round up.
+FLOOR(): Round down.
+ROUND(): Round to a specific number of digits.
+MOD(): Modulo operation.
+POW()/POWER(): Exponentiation.
+SQRT(): Square root.
+LN(): Natural logarithm.
+LOG(): Logarithm to a specific base.
+EXP(): Exponential function.
+RADIANS(): Convert degrees to radians.
+DEGREES(): Convert radians to degrees.
+SIGN(): Returns the sign of a number.
+RAND(): Generate a random number.
+GREATEST(): Find the maximum value.
+LEAST(): Find the minimum value.
+PI(): Return the value of Pi.
+TRUNCATE()	Truncate decimal places (no rounding)
+ROUND(x, d, mode)	Round with control over mode
+LOG2()	Log base 2
+LOG10()	Log base 10
+BIT_COUNT()	Count set bits in binary
+CONV()	Convert between number bases
+HEX()	Convert to hexadecimal
+OCT()	Convert to octal
+BIN()	Convert to binary
+
+
+
+1. ABS() - Absolute Value
+Description: Returns the absolute value of a number (removes the sign).
+SELECT ABS(-100) AS absolute_value;
+
+Output:
++----------------+
+| absolute_value |
++----------------+
+| 100            |
++----------------+
+
+
+2. CEIL() or CEILING() - Round Up
+Description: Rounds a number up to the nearest integer.
+SELECT CEIL(12.34) AS rounded_up;
+
+Output:
+
++------------+
+| rounded_up |
++------------+
+| 13         |
++------------+
+
+
+3. FLOOR() - Round Down
+Description: Rounds a number down to the nearest integer.
+SELECT FLOOR(12.34) AS rounded_down;
+
+Output:
++--------------+
+| rounded_down |
++--------------+
+| 12           |
++--------------+
+
+
+4. ROUND() - Round to a Specific Number of Digits
+Description: Rounds a number to a specified number of decimal places.
+SELECT ROUND(12.3456, 2) AS rounded_value;
+
+Output:
++--------------+
+| rounded_value|
++--------------+
+| 12.35        |
++--------------+
+
+
+5. MOD() - Modulo (Remainder of Division)
+Description: Returns the remainder of the division of two numbers.
+SELECT MOD(17, 5) AS remainder;
+
+Output:
+
++-----------+
+| remainder |
++-----------+
+| 2         |
++-----------+
+
+
+6. POW() or POWER() - Exponentiation
+Description: Returns the value of a number raised to the power of another number.
+SELECT POW(2, 3) AS power_value;
+
+Output:
++-------------+
+| power_value |
++-------------+
+| 8           |
++-------------+
+
+
+7. SQRT() - Square Root
+Description: Returns the square root of a number.
+SELECT SQRT(16) AS square_root;
+
+Output:
++-------------+
+| square_root |
++-------------+
+| 4           |
++-------------+
+
+
+8. LN() - Natural Logarithm
+Description: Returns the natural logarithm (base e) of a number.
+SELECT LN(10) AS natural_log;
+
+Output:
++-------------+
+| natural_log |
++-------------+
+| 2.302585    |
++-------------+
+
+
+9. LOG() - Logarithm
+Description: Returns the logarithm of a number to a specified base.
+SELECT LOG(10, 100) AS log_value;
+
+Output:
++-----------+
+| log_value |
++-----------+
+| 2         |
++-----------+
+
+
+10. EXP() - Exponential
+Description: Returns the value of e (Euler's number) raised to the power of the specified number.
+SELECT EXP(1) AS exponential_value;
+
+Output:
++-------------------+
+| exponential_value |
++-------------------+
+| 2.718282          |
++-------------------+
+
+
+11. RADIANS() - Convert Degrees to Radians
+Description: Converts degrees to radians.
+
+SELECT RADIANS(180) AS radians_value;
+
+Output:
++---------------+
+| radians_value |
++---------------+
+| 3.141593      |
++---------------+
+
+
+12. DEGREES() - Convert Radians to Degrees
+Description: Converts radians to degrees.
+
+SELECT DEGREES(PI()) AS degrees_value;
+
+Output:
++---------------+
+| degrees_value |
++---------------+
+| 180           |
++---------------+
+
+
+13. SIGN() - Sign of a Number
+Description: Returns the sign of a number:
+1 for positive numbers
+0 for zero
+-1 for negative numbers
+
+SELECT SIGN(-25) AS sign_value;
+
+Output:
++------------+
+| sign_value |
++------------+
+| -1         |
++------------+
+
+
+14. RAND() - Generate a Random Number
+Description: Returns a random floating-point number between 0 and 1.
+SELECT RAND() AS random_value;
+
+Output:
++--------------+
+| random_value |
++--------------+
+| 0.538953     |
++--------------+
+
+To generate a random number within a specific range:
+SELECT FLOOR(RAND() * (100 - 1 + 1) + 1) AS random_in_range;
+
+Output:
++------------------+
+| random_in_range  |
++------------------+
+| 47               |
++------------------+
+
+
+15. GREATEST() - Find the Maximum Value
+Description: Returns the largest value from a list of expressions.
+
+
+SELECT GREATEST(5, 10, 15, 20) AS GREATEST_value;
+
+Output:
++----------------+
+| greatest_value |
++----------------+
+| 20             |
++----------------+
+
+
+16. LEAST() - Find the Minimum Value
+Description: Returns the smallest value from a list of expressions.
+
+SELECT LEAST(5, 10, 15, 20) AS least_value;
+
+Output:
++--------------+
+| least_value |
++--------------+
+| 5            |
++--------------+
+
+
+17. PI() - Returns the Value of Pi
+Description: Returns the constant value of π (pi).
+SELECT PI() AS pi_value;
+
+Output:
++-----------+
+| pi_value  |
++-----------+
+| 3.141593  |
++-----------+
+18. TRUNCATE() – Truncate Decimal Places
+Description: Truncates a number to a specified number of decimal places without rounding.
+
+SELECT TRUNCATE(12.3456, 2) AS truncated_value;
+
+Output:
++----------------+
+| truncated_value|
++----------------+
+| 12.34          |
++----------------+
+
+
+19. ROUND(X, D [, mode]) – Round with Optional Mode
+Description: Rounds a number X to D decimal places. If mode is set to 1, it truncates away from zero instead of rounding.
+
+Output:
++----------------+
+| rounded_custom |
++----------------+
+| -1.5           |
++----------------+
+
+
+20. LOG2() – Logarithm Base 2
+Description: Returns the base-2 logarithm of a number.
+SELECT LOG2(8) AS log2_value;
+
+Output:
++-------------+
+| log2_value  |
++-------------+
+| 3           |
++-------------+
+
+
+21. LOG10() – Logarithm Base 10
+Description: Returns the base-10 logarithm of a number.
+SELECT LOG10(1000) AS log10_value;
+
+Output:
++--------------+
+| log10_value  |
++--------------+
+| 3            |
++--------------+
+
+
+22. BIT_COUNT() – Count of Set Bits
+Description: Returns the number of bits that are set (i.e., 1s) in the binary representation of a number.
+
+SELECT BIT_COUNT(7) AS set_bits_count;
+
+Output:
++-----------------+
+| set_bits_count  |
++-----------------+
+| 3               |
++-----------------+
+
+Because 7 in binary is 111 → 3 bits are set.
+
+23. CONV(N, from_base, to_base) – Convert Number Between Bases
+Description: Converts a number N from one base to another (between 2 and 36).
+SELECT CONV('A', 16, 10) AS base10_value;
+
+Output:
++--------------+
+| base10_value |
++--------------+
+| 10           |
++--------------+
+
+
+24. HEX() – Convert to Hexadecimal
+Description: Returns the hexadecimal value of a decimal number.
+SELECT HEX(255) AS hex_value;
+
+Output:
++-----------+
+| hex_value |
++-----------+
+| FF        |
++-----------+
+
+
+25. OCT() – Convert to Octal
+Description: Returns the octal (base 8) representation of a number.
+SELECT OCT(64) AS octal_value;
+
+Output:
++-------------+
+| octal_value |
++-------------+
+| 100         |
++-------------+
+
+
+26. BIN() – Convert to Binary
+Description: Converts a decimal number to its binary representation.
+SELECT BIN(10) AS binary_value;
+
+Output:
+
++--------------+
+| binary_value |
++--------------+
+| 1010         |
++--------------+
+
+
+
+
+
+
+SQL STRING FUNCTIONS
+MySQL String Functions with Description
+Function
+Description
+CONCAT()
+Concatenates (joins) two or more strings into a single string without any separator unless specified.
+CONCAT_WS()
+Concatenates multiple strings using a specified separator (WS = With Separator).
+UPPER()
+Converts all characters in a string to uppercase. (UCASE() is an alias.)
+LOWER()
+Converts all characters in a string to lowercase. (LCASE() is an alias.)
+SUBSTRING()
+Extracts a specified number of characters from a string starting at a given position. (SUBSTR() is an alias.)
+LEFT()
+Returns the specified number of characters from the beginning (left side) of a string.
+RIGHT()
+Returns the specified number of characters from the end (right side) of a string.
+LENGTH()
+Returns the length of a string in bytes. For multi-byte characters, the byte count may be greater than the character count.
+CHAR_LENGTH()
+Returns the number of characters in a string, regardless of how many bytes each character occupies.
+REPLACE()
+Replaces all occurrences of a specified substring within a string with another substring.
+TRIM()
+Removes leading and trailing spaces (or specified characters) from a string.
+POSITION()
+Returns the position of the first occurrence of a substring within a string. Returns 0 if the substring is not found.
+INSTR()
+Returns the position of the first occurrence of a substring within a string. Similar to POSITION(), but uses a different syntax.
+REVERSE()
+Reverses the order of characters in a string.
+LPAD()
+Pads the left side of a string with a specified character until the string reaches the desired length.
+RPAD()
+Pads the right side of a string with a specified character until the string reaches the desired length.
+ASCII()
+Returns the ASCII value of the first character in a string.
+
+
+Table Setup
+A single employees table is reused for every question in this workbook — from basic single-function calls through advanced multi-function reports.
+CREATE TABLE employees (
+	emp_id INT PRIMARY KEY,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30),
+	email VARCHAR(60),
+	phone_number VARCHAR(20),
+	department VARCHAR(30),
+	city VARCHAR(30),
+	salary DECIMAL(10,2)
+);
+
+Sample Data
+INSERT INTO employees VALUES
+(101,'Rahul','Kumar','rahul.kumar@gmail.com','987-654-3210','IT','Hyderabad',45000),
+(102,'Anita','Sharma','anita.sharma@yahoo.com','912-345-6789','HR','Bangalore',38000),
+(103,'Suresh','Verma','suresh.verma@gmail.com','998-123-4567','Sales','Chennai',52000),
+(104,'Priya','Singh','priya.singh@outlook.com','900-456-7890','Finance','Pune',47000),
+(105,'Rahul','Joshi','rahul.joshi@gmail.com','955-888-1111','Testing','Delhi',41000),
+(106,'Kiran','Reddy','kiran.reddy@gmail.com','901-222-3333','IT','Hyderabad',56000),
+(107,'Deepika','Naidu','deepika.naidu@yahoo.com','944-111-2222','HR','Vizag',39000),
+(108,'Mahesh','Patel','mahesh.patel@gmail.com','933-444-5555','Sales','Mumbai',62000),
+(109,'Divya','Gupta','divya.gupta@gmail.com','955-777-8888','Finance','Delhi',49000),
+(110,'Arjun','Rao','arjun.rao@gmail.com','988-999-7777','Developer','Hyderabad',68000);
+
+
+ Basic Level
+20 Questions — one string function at a time
+Q1. Display full name by concatenating first_name and last_name.
+SELECT CONCAT(first_name, ' ', last_name) AS full_name
+FROM employees;
+
+Q2. Convert first_name to uppercase.
+SELECT first_name, UPPER(first_name) AS upper_name
+FROM employees;
+
+Q3. Convert last_name to lowercase.
+SELECT last_name, LOWER(last_name) AS lower_name
+FROM employees;
+
+Q4. Extract the first 10 characters of email.
+SELECT email, SUBSTRING(email, 1, 10) AS email_prefix
+FROM employees;
+
+Q5. Find the length of first_name.
+SELECT first_name, LENGTH(first_name) AS name_length
+FROM employees;
+
+Q6. Remove dashes from phone_number.
+SELECT phone_number, REPLACE(phone_number, '-', '') AS clean_phone
+FROM employees;
+
+Q7. Remove leading and trailing spaces from first_name.
+SELECT TRIM(first_name) AS trimmed_name
+FROM employees;
+
+Q8. Concatenate first_name, last_name and email separated by a comma.
+SELECT CONCAT_WS(', ', first_name, last_name, email) AS employee_info
+FROM employees;
+
+Q9. Find the position of the letter 'a' in first_name using POSITION().
+SELECT first_name, POSITION('a' IN first_name) AS position_of_a
+FROM employeeSELECT FIRST_NAME,INSTR
+
+Q10. Find the position of the letter 'a' in first_name using INSTR().
+SELECT first_name, INSTR(first_name, 'a') AS position_of_a
+FROM employees;
+
+Q11. Display the first 3 characters of first_name.
+SELECT first_name, LEFT(first_name, 3) AS short_name
+FROM employees;
+
+Q12. Display the last 3 characters of last_name.
+SELECT last_name, RIGHT(last_name, 3) AS end_letters
+FROM employees;
+
+Q13. Reverse the first_name.
+SELECT first_name, REVERSE(first_name) AS reversed_name
+FROM employees;
+
+Q14. Pad first_name on the left with '*' to make it 10 characters.
+SELECT first_name, LPAD(first_name, 10, '*') AS padded_name
+FROM employees;
+
+Q15. Pad first_name on the right with '-' to make it 10 characters.
+SELECT first_name, RPAD(first_name, 10, '-') AS padded_name
+FROM employees;
+
+Q16. Find the ASCII value of the first character of first_name.
+SELECT first_name, ASCII(first_name) AS ascii_value
+FROM employees;
+
+Q17. Find the character length of first_name.
+SELECT first_name, CHAR_LENGTH(first_name) AS char_len
+FROM employees;
+
+Q18. Convert email addresses to lowercase.
+SELECT email, LOWER(email) AS lower_email
+FROM employees;
+
+Q19. Convert department names to uppercase.
+SELECT department, UPPER(department) AS upper_department
+FROM employees;
+
+Q20. Remove leading spaces and trailing spaces from city using LTRIM() and RTRIM().
+SELECT city, LTRIM(city) AS left_trimmed, RTRIM(city) AS right_trimmed
+FROM employees;
+
+
+ 
+Q1. Find employees whose first_name starts with 'R'.
+Q2. Find employees whose email contains 'yahoo'.
+Q3. Display full name along with department as a single string.
+Q4. Find the length of every email address.
+Q5. Find employees whose first_name has more than 5 characters.
+Q6. Replace 'gmail.com' with 'company.com' in email.
+Q7. Find the position of the '@' symbol in email.
+Q8. Extract the username part of email (before '@') using SUBSTRING_INDEX().
+Q9. Extract the domain part of email (after '@') using SUBSTRING_INDEX().
+Q10. Find employees whose last_name ends with 'a'.
+Q11. Display full name in uppercase for employees in the IT department.
+Q12. Find first names that are duplicated among employees.
+Q13. Format phone numbers by removing all dashes.
+Q14. Find employees whose first_name contains the letter 'i'.
+Q15. Sort employees by the length of their first_name.
+Q16. Find employees whose city name has more than 6 characters.
+Q17. Build a formatted string "Name - Department" for every employee.
